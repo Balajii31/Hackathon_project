@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login - Hackathon 2024</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="header">
+                <h1>Welcome Back</h1>
+                <p>Login to access your hackathon dashboard</p>
+            </div>
+            
+            <form id="loginForm" class="form">
+                <div class="form-group">
+                    <label for="registerNo">Register Number</label>
+                    <input type="text" id="registerNo" name="registerNo" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" id="submitBtn">
+                    <span class="btn-text">Login</span>
+                    <span class="btn-loading" style="display: none;">Logging in...</span>
+                </button>
+            </form>
+            
+            <div class="form-footer">
+                <p>Don't have an account? <a href="signup.html">Register here</a></p>
+                <p><a href="admin.html">Admin Login</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="notification" class="notification"></div>
+    <script src="script.js"></script>
+</body>
+</html>

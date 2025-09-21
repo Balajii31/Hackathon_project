@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Hackathon 2024</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Admin Login Form -->
+    <div class="container" id="adminLoginContainer">
+        <div class="form-container">
+            <div class="header">
+                <h1>Admin Login</h1>
+                <p>Access the hackathon management dashboard</p>
+            </div>
+            
+            <form id="adminLoginForm" class="form">
+                <div class="form-group">
+                    <label for="adminUsername">Username</label>
+                    <input type="text" id="adminUsername" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="adminPassword">Password</label>
+                    <input type="password" id="adminPassword" name="password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" id="adminSubmitBtn">
+                    <span class="btn-text">Login</span>
+                    <span class="btn-loading" style="display: none;">Logging in...</span>
+                </button>
+            </form>
+            
+            <div class="form-footer">
+                <p><a href="login.html">Student Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div class="admin-container" id="adminDashboard" style="display: none;">
+        <div class="admin-header">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h1>Admin Dashboard</h1>
+                    <p>Manage hackathon registrations, teams, and requests</p>
+                </div>
+                <button class="logout-btn" id="adminLogoutBtn">Logout</button>
+            </div>
+        </div>
+
+        <div class="admin-tabs">
+            <button class="tab-btn active" data-tab="students">Students</button>
+            <button class="tab-btn" data-tab="teams">Teams</button>
+            <button class="tab-btn" data-tab="requests">Join Requests</button>
+        </div>
+
+        <!-- Students Tab -->
+        <div class="tab-content active" id="students-tab">
+            <div class="data-table">
+                <h2 style="padding: 20px; margin: 0; background: #f8fafc; border-bottom: 1px solid #e5e7eb;">
+                    Registered Students
+                    <span id="studentsCount" style="color: #6b7280; font-size: 0.9rem; font-weight: normal;"></span>
+                </h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Register No</th>
+                            <th>Department</th>
+                            <th>Email</th>
+                            <th>GitHub</th>
+                            <th>Experience</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsTableBody">
+                        <tr>
+                            <td colspan="7" style="text-align: center; padding: 40px;">Loading students...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Teams Tab -->
+        <div class="tab-content" id="teams-tab">
+            <div class="data-table">
+                <h2 style="padding: 20px; margin: 0; background: #f8fafc; border-bottom: 1px solid #e5e7eb;">
+                    Teams
+                    <span id="teamsCount" style="color: #6b7280; font-size: 0.9rem; font-weight: normal;"></span>
+                </h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Team Name</th>
+                            <th>Leader</th>
+                            <th>Members</th>
+                            <th>Member Count</th>
+                            <th>Created</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="teamsTableBody">
+                        <tr>
+                            <td colspan="6" style="text-align: center; padding: 40px;">Loading teams...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Requests Tab -->
+        <div class="tab-content" id="requests-tab">
+            <div class="data-table">
+                <h2 style="padding: 20px; margin: 0; background: #f8fafc; border-bottom: 1px solid #e5e7eb;">
+                    Join Requests
+                    <span id="requestsCount" style="color: #6b7280; font-size: 0.9rem; font-weight: normal;"></span>
+                </h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Register No</th>
+                            <th>Requested Team</th>
+                            <th>Status</th>
+                            <th>Request Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="requestsTableBody">
+                        <tr>
+                            <td colspan="6" style="text-align: center; padding: 40px;">Loading requests...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div id="notification" class="notification"></div>
+    <script src="admin.js"></script>
+</body>
+</html>

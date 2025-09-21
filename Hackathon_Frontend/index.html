@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Hackathon 2024</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="dashboard">
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Student Dashboard</h1>
+            <div class="user-info">
+                <div>
+                    <p><strong>Name:</strong> <span id="userName"></span></p>
+                    <p><strong>Register No:</strong> <span id="userRegister"></span></p>
+                </div>
+                <button class="logout-btn" id="logoutBtn">Logout</button>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Team Information Section -->
+            <div class="card" id="teamSection" style="display: none;">
+                <h2>My Team</h2>
+                <div class="team-info">
+                    <h3 id="teamName"></h3>
+                    <p><strong>Team Leader:</strong> <span id="teamLeader"></span></p>
+                    <h4>Team Members:</h4>
+                    <ul class="member-list" id="membersList"></ul>
+                </div>
+                
+                <div id="addMemberSection" style="display: none;">
+                    <h3>Add Team Member</h3>
+                    <form id="addMemberForm">
+                        <div class="form-group">
+                            <label for="memberRegisterNo">Member Register Number</label>
+                            <input type="text" id="memberRegisterNo" name="memberRegisterNo" required>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-small">Add Member</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Create Team Section -->
+            <div class="card" id="createTeamSection">
+                <h2>Create Your Team</h2>
+                <p>Start your hackathon journey by creating a team. You'll be the team leader.</p>
+                <form id="createTeamForm">
+                    <div class="form-group">
+                        <label for="teamName">Team Name</label>
+                        <input type="text" id="teamName" name="teamName" required maxlength="50">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Team</button>
+                </form>
+            </div>
+
+            <!-- Join Team Section -->
+            <div class="card" id="joinTeamSection">
+                <h2>Join a Team</h2>
+                <p>Request to join an existing team. The team leader will approve your request.</p>
+                <form id="joinRequestForm">
+                    <div class="form-group">
+                        <label for="requestedTeam">Team Name to Join</label>
+                        <input type="text" id="requestedTeam" name="requestedTeam" required>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Send Join Request</button>
+                </form>
+            </div>
+
+            <!-- Team Rules -->
+            <div class="card">
+                <h2>Team Rules</h2>
+                <ul style="list-style: disc; margin-left: 20px; line-height: 1.6;">
+                    <li>Maximum 6 members per team</li>
+                    <li>Team leader can add members directly</li>
+                    <li>Students can request to join teams</li>
+                    <li>Only team leaders can approve join requests</li>
+                    <li>Each student can only be in one team</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="notification" class="notification"></div>
+    <script src="script.js"></script>
+</body>
+</html>
